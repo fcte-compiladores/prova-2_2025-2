@@ -1,0 +1,19 @@
+start    : pylist | jsonlist | jslist | lisplist | lualist
+atom     : ID | NUM 
+
+
+// Modifique estas regras. Cuidado para não inserir uma jslist numa pylist, ou 
+// uma pylist numa jsonlist, etc.
+pylist   : "[" atom* "]"
+
+jsonlist : "[" atom* "]"
+
+jslist   : "[" atom* "]"
+
+lisplist : "'" "(" atom* ")"
+
+lualist : "{" atom* "}" 
+
+NUM      : /\d+/
+ID       : /\w+/
+%ignore  /\s+/

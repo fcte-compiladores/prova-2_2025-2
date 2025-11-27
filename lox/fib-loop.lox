@@ -1,0 +1,15 @@
+
+fun fib(n) {
+  var x = 0;
+  var y = 1;
+  for (var i = 0; i < n; i = i + 1) {
+    var aux = x;
+    x = y;
+    y = aux + y;
+  }
+  return y;
+}
+
+var t0 = clock();
+fib(20);
+print clock() - t0;
